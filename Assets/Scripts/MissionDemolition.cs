@@ -82,6 +82,10 @@ public class MissionDemolition : MonoBehaviour
             Invoke("NextLevel", 2f);
         }
         //if player finish last level
+        if ((level == levelMax) && Goal.goalMet)
+        {
+            FindObjectOfType<GameOverManager>().GameOver();
+        }
     }
     void NextLevel()
     {
